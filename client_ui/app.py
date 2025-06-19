@@ -3,7 +3,11 @@ import socket
 import json
 import os
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder=os.path.join(os.path.dirname(__file__), 'static'),
+    template_folder=os.path.join(os.path.dirname(__file__), 'templates')
+)
 
 ports = {
     "shkup": 5001,
