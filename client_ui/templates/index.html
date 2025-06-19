@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disaster Relief Map</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div id="mainContainer">
+        <!-- Harta në të majtë -->
+        <div id="map"></div>
+
+        <!-- Formulari në të djathtë -->
+        <div id="formContainer">
+            <h2>Dërgo një kërkesë ndihme</h2>
+
+            <label for="qyteti"><strong>Zgjedh qytetin:</strong></label>
+            <select id="qyteti">
+                <option value="shkup">Shkup</option>
+                <option value="tetove">Tetovë</option>
+                <option value="gostivar">Gostivar</option>
+            </select>
+
+            <div class="kategori">
+                <p><strong>Kategoria:</strong></p>
+                <label><input type="radio" name="kategoria" value="Ambulantë"> Ambulantë</label><br>
+                <label><input type="radio" name="kategoria" value="Ujë"> Ujë</label><br>
+                <label><input type="radio" name="kategoria" value="Ushqim"> Ushqim</label><br>
+                <label><input type="radio" name="kategoria" value="Tjetër"> Tjetër</label>
+            </div>
+
+            <textarea id="kerkesa" rows="4" placeholder="Përshkruaj kërkesën..."></textarea>
+            <button onclick="dergoKerkesen()">📨 Dërgo</button>
+
+            <p id="pergjigje" class="fade"></p>
+        </div>
+    </div>
+
+   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+
+
+
+</body>
+</html>
