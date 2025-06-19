@@ -1,10 +1,4 @@
-from flask import Flask
+from client_ui.app import app
 
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return "✅ Deploy i suksesshëm! Projekti Disaster Relief është LIVE."
-
-if __name__ == '__main__':
-    app.run()
+# Ky është app-i që Azure do ta përdorë si hyrje (entry point)
+# Mos e shto app.run(), sepse Azure e nis automatikisht me gunicorn
